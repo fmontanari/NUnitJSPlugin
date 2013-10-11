@@ -1,0 +1,113 @@
+<idea-plugin version="2">
+	<name >NUnitJS</name>
+	<description>NUnitJS integration plugin, NUnitJS is a test framework for NodeJS</description>
+	<version>1.3</version>
+	<vendor url="https://github.com/fmontanari/nunitjs">Fabio Montanari</vendor>
+	<category>Unit Testing</category>
+	<idea-version since-build="107.658" />
+
+	<depends>NodeJS</depends>
+	<depends>com.intellij.modules.lang</depends>
+
+	<application-components>
+		<!-- Add your application components here -->
+	</application-components>
+
+	<project-components>
+		<!-- Add your project components here -->
+	</project-components>
+
+	<actions>
+		
+		<action id="nunitjs.RunAll"
+				class="com.jetbrains.nunitjs.RunAllAction"
+				text="Run All"
+				description="Run all unit tests"
+				icon="icons/RunAll.png">
+			<keyboard-shortcut first-keystroke="alt R" second-keystroke="A" keymap="$default"/>
+		</action>
+
+		<action id="nunitjs.RunFixture"
+				class="com.jetbrains.nunitjs.RunFixtureAction"
+				text="Run Fixture"
+				description="Run unit tests on fixture"
+				icon="icons/RunFixture.png">
+			<keyboard-shortcut first-keystroke="alt R" second-keystroke="F" keymap="$default"/>
+		</action>
+
+		<action id="nunitjs.RunTest"
+				class="com.jetbrains.nunitjs.RunTestAction"
+				text="Run Test"
+				description="Run unit test"
+				icon="icons/RunTest.png">
+			<keyboard-shortcut first-keystroke="alt R" second-keystroke="T" keymap="$default"/>
+		</action>
+
+
+		<action id="nunitjs.DebugAll"
+				class="com.jetbrains.nunitjs.DebugAllAction"
+				text="Debug All"
+				description="Run all unit tests with debugger"
+				icon="icons/DebugAll.png">
+			<keyboard-shortcut first-keystroke="alt D" second-keystroke="A" keymap="$default"/>
+		</action>
+
+		<action id="nunitjs.DebugFixture"
+				class="com.jetbrains.nunitjs.DebugFixtureAction"
+				text="Debug Fixture"
+				description="Run unit tests on fixture with debugger"
+				icon="icons/DebugFixture.png">
+			<keyboard-shortcut first-keystroke="alt D" second-keystroke="F" keymap="$default"/>
+		</action>
+
+		<action id="nunitjs.DebugTest"
+                                 class="com.jetbrains.nunitjs.DebugTestAction"
+                                 text="Debug Test"
+                                 description="Run unit test with debugger"
+                                 icon="icons/DebugTest.png">
+        <keyboard-shortcut first-keystroke="alt D" second-keystroke="T" keymap="$default"/>
+    </action>
+		
+
+		<group id="nunitjs.Menu" text="Test" description="Unit tests suite for NodeJS">
+			<add-to-group group-id="MainMenu" anchor="after" relative-to-action="RunMenu" />
+			<reference ref="nunitjs.RunAll" />
+			<reference ref="nunitjs.DebugAll" />
+			<separator />
+			<reference ref="nunitjs.RunFixture" />
+			<reference ref="nunitjs.DebugFixture" />
+		</group>
+
+		<group id="nunitjs.Toolbar" text="Test" description="Unit tests suite for NodeJS">
+			<add-to-group group-id="ToolbarRunGroup" anchor="last" />
+			<separator />
+			<reference ref="nunitjs.RunAll" />
+			<reference ref="nunitjs.DebugAll" />
+			<separator />
+			<reference ref="nunitjs.RunFixture" />
+			<reference ref="nunitjs.DebugFixture" />
+		</group>
+
+		<group id="nunitjs.ProjectPopupMenu" text="Test" description="Unit tests suite for NodeJS">
+			<add-to-group group-id="ProjectViewPopupMenu" anchor="last" />
+			<reference ref="nunitjs.RunFixture" />
+			<reference ref="nunitjs.DebugFixture" />
+		</group>
+
+		<group id="nunitjs.EditorPopupMenu" text="Test" description="Unit tests suite for NodeJS">
+			<add-to-group group-id="EditorPopupMenu" anchor="last" />
+			<reference ref="nunitjs.RunFixture" />
+			<reference ref="nunitjs.DebugFixture" />
+			<separator />
+			<reference ref="nunitjs.RunTest" />
+			<reference ref="nunitjs.DebugTest" />
+			<separator />
+		</group>
+
+	</actions>
+
+	<extensions defaultExtensionNs="com.intellij">
+		<projectConfigurable implementation="com.jetbrains.nunitjs.NUnitJSConfig"></projectConfigurable>
+	</extensions>
+
+</idea-plugin>
