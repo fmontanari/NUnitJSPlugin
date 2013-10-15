@@ -77,11 +77,11 @@ public class NUnitLauncher {
             return;
         }
 
-        ExecutionEnvironment executionEnvironment = new ExecutionEnvironment(_ProgramRunner, nodeUnitSettings, _Project);
         Executor executor = DefaultRunExecutor.getRunExecutorInstance();
+        ExecutionEnvironment executionEnvironment = new ExecutionEnvironment(executor, _ProgramRunner, nodeUnitSettings, _Project);
 
         try {
-            _ProgramRunner.execute(executor, executionEnvironment);
+            _ProgramRunner.execute(executionEnvironment);
         } catch (ExecutionException e1) {
             JavaExecutionUtil.showExecutionErrorMessage(e1, "Error", _Project);
         }
