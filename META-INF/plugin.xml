@@ -1,7 +1,7 @@
 <idea-plugin version="2">
 	<name >NUnitJS</name>
 	<description>NUnitJS integration plugin, NUnitJS is a test framework for NodeJS</description>
-	<version>1.3</version>
+	<version>1.4</version>
 	<vendor url="https://github.com/fmontanari/nunitjs">Fabio Montanari</vendor>
 	<category>Unit Testing</category>
     <idea-version since-build="107" until-build="130" />
