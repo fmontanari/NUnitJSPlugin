@@ -6,12 +6,12 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="IDEA IU-132.556" jdkType="IDEA JDK" />
+    <orderEntry type="jdk" jdkName="IDEA IU-132.637" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" scope="PROVIDED">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/JavascriptLanguage.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/NodeJS/lib/NodeJS.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -20,7 +20,16 @@
     <orderEntry type="module-library" scope="PROVIDED">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/NodeJS.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/JavaScriptLanguage/lib/javascript-openapi.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
